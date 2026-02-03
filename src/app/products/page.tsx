@@ -5,6 +5,7 @@ import { products, getProductsByCategory } from "@/data/products";
 export default function Products() {
 	const canisters = getProductsByCategory("canister");
 	const bulk = getProductsByCategory("bulk");
+	const emptyCanisters = getProductsByCategory("empty-canister");
 
 	return (
 		<div className="mx-auto max-w-6xl px-6 py-16">
@@ -15,30 +16,60 @@ export default function Products() {
 				Grab a canister for your pocket or go big with bulk.
 			</p>
 
-			{/* Canisters Section */}
-			<section className="mt-14">
-				<h2 className="font-serif text-2xl font-semibold text-stone-800">
-					Sprinkling Canisters
-				</h2>
-				<p className="mt-2 text-stone-600">
-					Pocket-sized. Perfect for targeted rewilding.
-				</p>
-				<div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{/* Sprinkling Canisters Section */}
+			<section className="mt-14 rounded-2xl bg-amber-50 p-8">
+				<div className="mb-6 flex items-center gap-3">
+					<span className="text-3xl">🌸</span>
+					<div>
+						<h2 className="font-serif text-2xl font-semibold text-stone-800">
+							Sprinkling Canisters
+						</h2>
+						<p className="text-stone-600">
+							Pocket-sized. Pre-filled. Perfect for targeted rewilding.
+						</p>
+					</div>
+				</div>
+				<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 					{canisters.map((product) => (
 						<ProductCard key={product.id} product={product} />
 					))}
 				</div>
 			</section>
 
-			{/* Bulk Section */}
-			<section className="mt-20">
-				<h2 className="font-serif text-2xl font-semibold text-stone-800">
-					Bulk Seeds
-				</h2>
-				<p className="mt-2 text-stone-600">
-					For when you mean business. Or have a big yard.
-				</p>
-				<div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{/* Empty Canisters Section */}
+			<section className="mt-12 rounded-2xl bg-stone-100 p-8">
+				<div className="mb-6 flex items-center gap-3">
+					<span className="text-3xl">📦</span>
+					<div>
+						<h2 className="font-serif text-2xl font-semibold text-stone-800">
+							Empty Canisters
+						</h2>
+						<p className="text-stone-600">
+							Bring your own seeds. Refillable and reusable.
+						</p>
+					</div>
+				</div>
+				<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+					{emptyCanisters.map((product) => (
+						<ProductCard key={product.id} product={product} />
+					))}
+				</div>
+			</section>
+
+			{/* Bulk Seeds Section */}
+			<section className="mt-12 rounded-2xl bg-green-50 p-8">
+				<div className="mb-6 flex items-center gap-3">
+					<span className="text-3xl">🌾</span>
+					<div>
+						<h2 className="font-serif text-2xl font-semibold text-stone-800">
+							Bulk Seeds
+						</h2>
+						<p className="text-stone-600">
+							For when you mean business. Cover serious ground.
+						</p>
+					</div>
+				</div>
+				<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 					{bulk.map((product) => (
 						<ProductCard key={product.id} product={product} />
 					))}

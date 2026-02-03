@@ -9,6 +9,19 @@ export function generateStaticParams() {
 	}));
 }
 
+function getCategoryLabel(category: string) {
+	switch (category) {
+		case "canister":
+			return "Sprinkling Canister";
+		case "empty-canister":
+			return "Empty Canister";
+		case "bulk":
+			return "Bulk Seeds";
+		default:
+			return category;
+	}
+}
+
 export default async function ProductPage({
 	params,
 }: {
@@ -20,6 +33,8 @@ export default async function ProductPage({
 	if (!product) {
 		notFound();
 	}
+
+	const isEmptyCanister = product.category === "empty-canister";
 
 	return (
 		<div className="mx-auto max-w-6xl px-6 py-16">
@@ -46,9 +61,7 @@ export default async function ProductPage({
 				{/* Product Info */}
 				<div>
 					<span className="text-sm font-medium uppercase tracking-wider text-amber-700">
-						{product.category === "canister"
-							? "Sprinkling Canister"
-							: "Bulk Seeds"}
+						{getCategoryLabel(product.category)}
 					</span>
 					<h1 className="mt-3 font-serif text-4xl font-semibold text-stone-800">
 						{product.name}
@@ -64,48 +77,52 @@ export default async function ProductPage({
 						Add to Cart
 					</button>
 
-					{/* Details */}
-					<div className="mt-12 border-t border-stone-200 pt-8">
-						<h2 className="font-serif text-xl font-semibold text-stone-800">
-							Details
-						</h2>
-						<dl className="mt-5 space-y-4">
-							<div className="flex justify-between">
-								<dt className="text-stone-500">Sunlight</dt>
-								<dd className="font-medium capitalize text-stone-800">
-									{product.sunlight} sun
-								</dd>
-							</div>
-							<div className="flex justify-between">
-								<dt className="text-stone-500">Bloom Season</dt>
-								<dd className="font-medium text-stone-800">
-									{product.bloomSeason}
-								</dd>
-							</div>
-						</dl>
-					</div>
+					{/* Details - hide for empty canisters */}
+					{!isEmptyCanister && (
+						<div className="mt-12 border-t border-stone-200 pt-8">
+							<h2 className="font-serif text-xl font-semibold text-stone-800">
+								Details
+							</h2>
+							<dl className="mt-5 space-y-4">
+								<div className="flex justify-between">
+									<dt className="text-stone-500">Sunlight</dt>
+									<dd className="font-medium capitalize text-stone-800">
+										{product.sunlight} sun
+									</dd>
+								</div>
+								<div className="flex justify-between">
+									<dt className="text-stone-500">Bloom Season</dt>
+									<dd className="font-medium text-stone-800">
+										{product.bloomSeason}
+									</dd>
+								</div>
+							</dl>
+						</div>
+					)}
 
-					{/* Flowers Included */}
+					{/* Flowers Included - hide for empty canisters */}
+					{!isEmptyCanister && product.flowers.length > 0 && (
+						<div className="mt-10 border-t border-stone-200 pt-8">
+							<h2 className="font-serif text-xl font-semibold text-stone-800">
+								What&apos;s Inside
+							</h2>
+							<ul className="mt-5 flex flex-wrap gap-2">
+								{product.flowers.map((flower) => (
+									<li
+										key={flower}
+										className="rounded-full bg-amber-50 px-4 py-2 text-amber-800"
+									>
+										{flower}
+									</li>
+								))}
+							</ul>
+						</div>
+					)}
+
+					{/* Usage / Planting Guide */}
 					<div className="mt-10 border-t border-stone-200 pt-8">
 						<h2 className="font-serif text-xl font-semibold text-stone-800">
-							What&apos;s Inside
-						</h2>
-						<ul className="mt-5 flex flex-wrap gap-2">
-							{product.flowers.map((flower) => (
-								<li
-									key={flower}
-									className="rounded-full bg-amber-50 px-4 py-2 text-amber-800"
-								>
-									{flower}
-								</li>
-							))}
-						</ul>
-					</div>
-
-					{/* Planting Guide */}
-					<div className="mt-10 border-t border-stone-200 pt-8">
-						<h2 className="font-serif text-xl font-semibold text-stone-800">
-							How to Plant
+							{isEmptyCanister ? "How to Use" : "How to Plant"}
 						</h2>
 						<p className="mt-5 leading-relaxed text-stone-600">
 							{product.plantingGuide}

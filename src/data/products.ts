@@ -3,11 +3,11 @@ export interface Product {
 	name: string;
 	description: string;
 	price: number;
-	category: "canister" | "bulk";
+	category: "canister" | "bulk" | "empty-canister";
 	image: string;
 	plantingGuide: string;
 	flowers: string[];
-	sunlight: "full" | "partial" | "shade";
+	sunlight: "full" | "partial" | "shade" | "n/a";
 	bloomSeason: string;
 }
 
@@ -110,6 +110,50 @@ export const products: Product[] = [
 		],
 		sunlight: "full",
 		bloomSeason: "Spring to Fall",
+	},
+
+	// Empty Canisters
+	{
+		id: "empty-canister-small",
+		name: "Empty Canister (4 oz)",
+		description:
+			"Our pocket-sized sprinkling canister, empty and ready for your own seed mix. Perfect for custom blends or refills.",
+		price: 6.99,
+		category: "empty-canister",
+		image: "/images/products/empty-canister-small.jpg",
+		plantingGuide:
+			"Fill with your favorite seeds. The shaker top provides even distribution. Refillable and reusable.",
+		flowers: [],
+		sunlight: "n/a",
+		bloomSeason: "N/A",
+	},
+	{
+		id: "empty-canister-large",
+		name: "Empty Canister (8 oz)",
+		description:
+			"Larger capacity for bigger projects. Same great shaker design, twice the seeds. Bring your own blend.",
+		price: 9.99,
+		category: "empty-canister",
+		image: "/images/products/empty-canister-large.jpg",
+		plantingGuide:
+			"Fill with your favorite seeds. The shaker top provides even distribution. Refillable and reusable.",
+		flowers: [],
+		sunlight: "n/a",
+		bloomSeason: "N/A",
+	},
+	{
+		id: "empty-canister-3pack",
+		name: "Empty Canister 3-Pack",
+		description:
+			"Three 4 oz canisters for the dedicated seed scatterer. Mix and match your own blends. Share with friends.",
+		price: 16.99,
+		category: "empty-canister",
+		image: "/images/products/empty-canister-3pack.jpg",
+		plantingGuide:
+			"Fill with your favorite seeds. The shaker top provides even distribution. Refillable and reusable.",
+		flowers: [],
+		sunlight: "n/a",
+		bloomSeason: "N/A",
 	},
 ];
 
