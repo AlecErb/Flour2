@@ -42,14 +42,21 @@ npm run lint     # Run ESLint
 
 ```
 src/
+  components/
+    Header.tsx   # Site navigation
+    Footer.tsx   # Site footer
   app/
-    layout.tsx   # Root layout (wraps all pages)
+    layout.tsx   # Root layout (wraps all pages with Header/Footer)
     page.tsx     # Homepage (/)
     globals.css  # Global styles and Tailwind imports
+    products/
+      page.tsx   # Products listing page
+    about/
+      page.tsx   # About page
 public/          # Static assets (images, fonts, etc.)
 ```
 
-Next.js uses file-based routing: create `src/app/about/page.tsx` to add a `/about` route.
+Next.js uses file-based routing: create `src/app/example/page.tsx` to add an `/example` route.
 
 ## Git
 
@@ -62,14 +69,14 @@ Next.js uses file-based routing: create `src/app/about/page.tsx` to add a `/abou
 - [x] Choose a tech stack (Next.js, TypeScript, Tailwind CSS)
 - [x] Initialize the project with package manager
 - [x] Set up a local development server
-- [ ] Create a basic "Hello World" homepage
+- [x] Create a basic homepage
 
 ### Phase 2: Static Site Structure
-- [ ] Create page layouts (header, footer, navigation)
-- [ ] Build homepage with hero section
+- [x] Create page layouts (header, footer, navigation)
+- [x] Build homepage with hero section
 - [ ] Create product listing page
 - [ ] Create individual product detail page template
-- [ ] Create about/contact pages
+- [x] Create about page
 
 ### Phase 3: Product Data
 - [ ] Define product data structure (name, description, price, images, manual, category)
