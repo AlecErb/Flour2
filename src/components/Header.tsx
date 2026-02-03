@@ -32,6 +32,14 @@ export default function Header() {
 							About
 						</Link>
 					</li>
+					<li>
+						<Link
+							href="/contact"
+							className="text-stone-600 transition-colors hover:text-amber-700"
+						>
+							Contact
+						</Link>
+					</li>
 				</ul>
 			</nav>
 		</header>
