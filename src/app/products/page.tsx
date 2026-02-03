@@ -8,20 +8,22 @@ export default function Products() {
 
 	return (
 		<div className="mx-auto max-w-6xl px-6 py-16">
-			<h1 className="text-4xl font-bold text-zinc-900">Our Products</h1>
-			<p className="mt-4 text-lg text-zinc-600">
-				Choose from our convenient sprinkling canisters or bulk seed options.
+			<h1 className="font-serif text-4xl font-semibold text-stone-800">
+				Our Seeds
+			</h1>
+			<p className="mt-4 text-lg text-stone-600">
+				Grab a canister for your pocket or go big with bulk.
 			</p>
 
 			{/* Canisters Section */}
-			<section className="mt-12">
-				<h2 className="text-2xl font-semibold text-zinc-800">
+			<section className="mt-14">
+				<h2 className="font-serif text-2xl font-semibold text-stone-800">
 					Sprinkling Canisters
 				</h2>
-				<p className="mt-2 text-zinc-600">
-					Easy-to-use canisters for small gardens and targeted planting.
+				<p className="mt-2 text-stone-600">
+					Pocket-sized. Perfect for targeted rewilding.
 				</p>
-				<div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				<div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 					{canisters.map((product) => (
 						<ProductCard key={product.id} product={product} />
 					))}
@@ -29,12 +31,14 @@ export default function Products() {
 			</section>
 
 			{/* Bulk Section */}
-			<section className="mt-16">
-				<h2 className="text-2xl font-semibold text-zinc-800">Bulk Seeds</h2>
-				<p className="mt-2 text-zinc-600">
-					Larger quantities for meadows and big projects.
+			<section className="mt-20">
+				<h2 className="font-serif text-2xl font-semibold text-stone-800">
+					Bulk Seeds
+				</h2>
+				<p className="mt-2 text-stone-600">
+					For when you mean business. Or have a big yard.
 				</p>
-				<div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				<div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 					{bulk.map((product) => (
 						<ProductCard key={product.id} product={product} />
 					))}
@@ -48,9 +52,9 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
 	return (
 		<Link
 			href={`/products/${product.id}`}
-			className="group rounded-lg border border-zinc-200 bg-white p-4 transition-shadow hover:shadow-md"
+			className="group rounded-xl border border-stone-200 bg-white p-5 transition-all hover:border-amber-300 hover:shadow-md"
 		>
-			<div className="aspect-square overflow-hidden rounded-md bg-zinc-100">
+			<div className="aspect-square overflow-hidden rounded-lg bg-stone-100">
 				<Image
 					src="/images/products/placeholder.svg"
 					alt={product.name}
@@ -59,11 +63,13 @@ function ProductCard({ product }: { product: (typeof products)[0] }) {
 					className="h-full w-full object-cover transition-transform group-hover:scale-105"
 				/>
 			</div>
-			<h3 className="mt-4 font-semibold text-zinc-900">{product.name}</h3>
-			<p className="mt-1 line-clamp-2 text-sm text-zinc-600">
+			<h3 className="mt-5 font-serif text-lg font-semibold text-stone-800">
+				{product.name}
+			</h3>
+			<p className="mt-2 line-clamp-2 text-stone-600">
 				{product.description}
 			</p>
-			<p className="mt-2 font-medium text-green-700">
+			<p className="mt-3 text-lg font-semibold text-amber-700">
 				${product.price.toFixed(2)}
 			</p>
 		</Link>

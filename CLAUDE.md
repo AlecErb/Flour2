@@ -8,6 +8,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Repository: https://github.com/AlecErb/Flour2.git
 
+### Target Audience
+
+The brand speaks to two overlapping audiences:
+
+1. **Urban rewilders** — Vagabond types with an anarchist streak who want to guerrilla garden and fertilize urban environments with wildflower seeds. Tech-savvy, values-driven, appreciates wit and irreverence.
+
+2. **Backyard naturalists** — Middle-aged homeowners, recently retired lawn care enthusiasts ready to convert their side yard to something more alive. Practical, wants clear instructions, appreciates approachability.
+
+The tone bridges both: earthy, friendly, slightly rebellious but never alienating. Think farmers market meets zine aesthetic.
+
 ### Products
 
 - **Sprinkling canisters** — convenient wildflower seed dispensers
@@ -28,6 +38,24 @@ Seed selections will vary based on customer preferences (flower types, colors, g
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Linting:** ESLint
+
+## Style Guide
+
+### Colors
+- **Primary:** Amber/terracotta (`amber-700`) — warm, earthy, approachable
+- **Background:** Warm cream (`#faf8f5`) — softer than pure white
+- **Text:** Warm grays (`stone-600`, `stone-800`) — easier to read than cool grays
+
+### Typography
+- **Headings:** Source Serif 4 (serif) — hand-crafted, friendly feel
+- **Body:** Source Sans 3 (sans-serif) — clean and readable
+- **Base size:** 18px with 1.7 line-height for readability
+
+### Voice
+- Friendly and direct, not corporate
+- Slight irreverence ("Guerrilla ready", "No lawn required")
+- Practical when it matters (planting guides)
+- Avoids jargon, speaks plainly
 
 ## Commands
 

@@ -25,14 +25,14 @@ export default async function ProductPage({
 		<div className="mx-auto max-w-6xl px-6 py-16">
 			<Link
 				href="/products"
-				className="text-sm text-green-700 hover:text-green-800"
+				className="text-amber-700 hover:text-amber-800"
 			>
-				← Back to Products
+				← Back to Seeds
 			</Link>
 
-			<div className="mt-8 grid gap-12 lg:grid-cols-2">
+			<div className="mt-10 grid gap-12 lg:grid-cols-2">
 				{/* Product Image */}
-				<div className="aspect-square overflow-hidden rounded-lg bg-zinc-100">
+				<div className="aspect-square overflow-hidden rounded-2xl bg-stone-100">
 					<Image
 						src="/images/products/placeholder.svg"
 						alt={product.name}
@@ -45,36 +45,40 @@ export default async function ProductPage({
 
 				{/* Product Info */}
 				<div>
-					<span className="text-sm font-medium uppercase tracking-wide text-green-700">
+					<span className="text-sm font-medium uppercase tracking-wider text-amber-700">
 						{product.category === "canister"
 							? "Sprinkling Canister"
 							: "Bulk Seeds"}
 					</span>
-					<h1 className="mt-2 text-3xl font-bold text-zinc-900">
+					<h1 className="mt-3 font-serif text-4xl font-semibold text-stone-800">
 						{product.name}
 					</h1>
-					<p className="mt-4 text-2xl font-semibold text-zinc-900">
+					<p className="mt-4 text-3xl font-semibold text-stone-800">
 						${product.price.toFixed(2)}
 					</p>
-					<p className="mt-4 text-lg text-zinc-600">{product.description}</p>
+					<p className="mt-6 text-lg leading-relaxed text-stone-600">
+						{product.description}
+					</p>
 
-					<button className="mt-8 w-full rounded-lg bg-green-600 px-6 py-3 font-medium text-white hover:bg-green-700 sm:w-auto">
+					<button className="mt-10 w-full rounded-full bg-amber-700 px-8 py-4 text-lg font-medium text-white transition-colors hover:bg-amber-800 sm:w-auto">
 						Add to Cart
 					</button>
 
 					{/* Details */}
-					<div className="mt-10 border-t border-zinc-200 pt-8">
-						<h2 className="font-semibold text-zinc-900">Details</h2>
-						<dl className="mt-4 space-y-4 text-sm">
+					<div className="mt-12 border-t border-stone-200 pt-8">
+						<h2 className="font-serif text-xl font-semibold text-stone-800">
+							Details
+						</h2>
+						<dl className="mt-5 space-y-4">
 							<div className="flex justify-between">
-								<dt className="text-zinc-600">Sunlight</dt>
-								<dd className="font-medium text-zinc-900 capitalize">
+								<dt className="text-stone-500">Sunlight</dt>
+								<dd className="font-medium capitalize text-stone-800">
 									{product.sunlight} sun
 								</dd>
 							</div>
 							<div className="flex justify-between">
-								<dt className="text-zinc-600">Bloom Season</dt>
-								<dd className="font-medium text-zinc-900">
+								<dt className="text-stone-500">Bloom Season</dt>
+								<dd className="font-medium text-stone-800">
 									{product.bloomSeason}
 								</dd>
 							</div>
@@ -82,13 +86,15 @@ export default async function ProductPage({
 					</div>
 
 					{/* Flowers Included */}
-					<div className="mt-8 border-t border-zinc-200 pt-8">
-						<h2 className="font-semibold text-zinc-900">Flowers Included</h2>
-						<ul className="mt-4 flex flex-wrap gap-2">
+					<div className="mt-10 border-t border-stone-200 pt-8">
+						<h2 className="font-serif text-xl font-semibold text-stone-800">
+							What&apos;s Inside
+						</h2>
+						<ul className="mt-5 flex flex-wrap gap-2">
 							{product.flowers.map((flower) => (
 								<li
 									key={flower}
-									className="rounded-full bg-green-50 px-3 py-1 text-sm text-green-800"
+									className="rounded-full bg-amber-50 px-4 py-2 text-amber-800"
 								>
 									{flower}
 								</li>
@@ -97,9 +103,13 @@ export default async function ProductPage({
 					</div>
 
 					{/* Planting Guide */}
-					<div className="mt-8 border-t border-zinc-200 pt-8">
-						<h2 className="font-semibold text-zinc-900">Planting Guide</h2>
-						<p className="mt-4 text-zinc-600">{product.plantingGuide}</p>
+					<div className="mt-10 border-t border-stone-200 pt-8">
+						<h2 className="font-serif text-xl font-semibold text-stone-800">
+							How to Plant
+						</h2>
+						<p className="mt-5 leading-relaxed text-stone-600">
+							{product.plantingGuide}
+						</p>
 					</div>
 				</div>
 			</div>
