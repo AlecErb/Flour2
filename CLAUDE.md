@@ -85,6 +85,8 @@ src/
         page.tsx # Individual product detail page
     about/
       page.tsx   # About page
+    contact/
+      page.tsx   # Contact page with form
 public/
   images/
     products/    # Product images (placeholder.svg for now)
@@ -111,6 +113,7 @@ Next.js uses file-based routing: create `src/app/example/page.tsx` to add an `/e
 - [x] Create product listing page
 - [x] Create individual product detail page template
 - [x] Create about page
+- [x] Create contact page
 
 ### Phase 3: Product Data
 - [x] Define product data structure (name, description, price, images, manual, category)
