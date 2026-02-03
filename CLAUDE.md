@@ -22,6 +22,35 @@ Each product includes:
 
 Seed selections will vary based on customer preferences (flower types, colors, growing conditions, etc.)
 
+## Tech Stack
+
+- **Framework:** Next.js 15 (React)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Linting:** ESLint
+
+## Commands
+
+```bash
+npm run dev      # Start development server at http://localhost:3000
+npm run build    # Build for production
+npm run start    # Run production build
+npm run lint     # Run ESLint
+```
+
+## Project Structure
+
+```
+src/
+  app/
+    layout.tsx   # Root layout (wraps all pages)
+    page.tsx     # Homepage (/)
+    globals.css  # Global styles and Tailwind imports
+public/          # Static assets (images, fonts, etc.)
+```
+
+Next.js uses file-based routing: create `src/app/about/page.tsx` to add a `/about` route.
+
 ## Git
 
 - Default branch: `main`
@@ -30,9 +59,9 @@ Seed selections will vary based on customer preferences (flower types, colors, g
 ## Development To-Do
 
 ### Phase 1: Local Development Setup
-- [ ] Choose a tech stack (framework, language, database)
-- [ ] Initialize the project with package manager
-- [ ] Set up a local development server
+- [x] Choose a tech stack (Next.js, TypeScript, Tailwind CSS)
+- [x] Initialize the project with package manager
+- [x] Set up a local development server
 - [ ] Create a basic "Hello World" homepage
 
 ### Phase 2: Static Site Structure
