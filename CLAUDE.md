@@ -45,15 +45,21 @@ src/
   components/
     Header.tsx   # Site navigation
     Footer.tsx   # Site footer
+  data/
+    products.ts  # Product data and TypeScript types
   app/
     layout.tsx   # Root layout (wraps all pages with Header/Footer)
     page.tsx     # Homepage (/)
     globals.css  # Global styles and Tailwind imports
     products/
       page.tsx   # Products listing page
+      [id]/
+        page.tsx # Individual product detail page
     about/
       page.tsx   # About page
-public/          # Static assets (images, fonts, etc.)
+public/
+  images/
+    products/    # Product images (placeholder.svg for now)
 ```
 
 Next.js uses file-based routing: create `src/app/example/page.tsx` to add an `/example` route.
@@ -74,14 +80,15 @@ Next.js uses file-based routing: create `src/app/example/page.tsx` to add an `/e
 ### Phase 2: Static Site Structure
 - [x] Create page layouts (header, footer, navigation)
 - [x] Build homepage with hero section
-- [ ] Create product listing page
-- [ ] Create individual product detail page template
+- [x] Create product listing page
+- [x] Create individual product detail page template
 - [x] Create about page
 
 ### Phase 3: Product Data
-- [ ] Define product data structure (name, description, price, images, manual, category)
-- [ ] Create sample product data (JSON, database, or CMS)
-- [ ] Display products dynamically from data source
+- [x] Define product data structure (name, description, price, images, manual, category)
+- [x] Create sample product data (TypeScript)
+- [x] Display products dynamically from data source
+- [ ] Add real product images (use AI image generation)
 
 ### Phase 4: Shopping Cart & Checkout (Future)
 - [ ] Add to cart functionality
